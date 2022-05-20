@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth.models import User
 
 
 # Create your models here.
@@ -28,7 +29,8 @@ class Digipet(models.Model):
     birthday = models.DateField('Birthday')
     # joy, fatigue, sleep, level will be added later on. This so far should be enough
     # to get our CRUD going
-    # user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
 
     def __str__(self):
         return self.name
