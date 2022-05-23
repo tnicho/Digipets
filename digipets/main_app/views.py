@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
+from .models import Digipet
 # Create your views here.
 
 
@@ -9,6 +10,13 @@ def home(request):
 
 def landing(request):
   return render(request, 'landing.html')
+
+def digipets_detail(request):
+  pass
+
+def digipets_index(request):
+  digipets = Digipet.objects.filter()
+  return render(request, 'digipets/index.html', {'digipets': digipets})
 
 def signup(request):
   error_message=''
