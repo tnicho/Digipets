@@ -9,4 +9,5 @@ urlpatterns = [
 	path('digipets/<int:pk>/update/', views.DigipetsUpdate.as_view(), name='digipets_update'),
   path('accounts/', include('django.contrib.auth.urls')),
   path('accounts/signup/', views.signup, name='signup'),
+  path('digipets/create/', views.DigipetCreate.as_view(), name='digipets_create'),
 ]
