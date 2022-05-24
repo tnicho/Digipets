@@ -6,6 +6,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import DigipetsForm
 from django.forms import ModelForm
+from django.views.generic.edit import UpdateView
 # Create your views here.
 
 
@@ -14,6 +15,14 @@ def home(request):
 
 def landing(request):
   return render(request, 'landing.html')
+
+def digipets_detail(request, digipet_id):
+  digipet = Digipet.objects.get(id=digipet_id)
+  return render(request, 'digipets/detail.html', {'digipet': digipet})
+
+def digipets_index(request):
+  digipets = Digipet.objects.filter()
+  return render(request, 'digipets/index.html', {'digipets': digipets})
 
 def signup(request):
   error_message=''
@@ -41,3 +50,7 @@ class DigipetCreate(CreateView):
     form.instance.user = self.request.user
     # taking the user and assigning them to the form instance
     return super().form_valid(form)
+
+class DigipetUpdate(UpdateView):
+  model = Digipet
+  fields = ['name', 'personality']
