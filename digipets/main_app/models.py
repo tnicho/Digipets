@@ -38,4 +38,4 @@ class Digipet(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('detail', kwargs={'Digipet_id': self.id})
+        return reverse('detail', kwargs={'digipet_id': self.id})
