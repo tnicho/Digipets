@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Remove Digipet</h1>
+
+  <h4>Are you sure you want to send <span class="teal-text">{{ object.name }}</span> to the farm?</h4>
+  <h6>*This cannot be undone</h6>
+
+  <form action="" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="Yes - Remove!" class="btn">
+    <a href="{% url 'detail' digipet.id %}">Cancel</a>
+  </form>
+{% endblock %}
