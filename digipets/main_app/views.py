@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
+from django.views.generic.edit import UpdateView
 from .models import Digipet
 # Create your views here.
 
@@ -32,3 +33,7 @@ def signup(request):
   form = UserCreationForm()
   context = {'form': form, 'error_message': error_message}
   return render(request, 'registration/signup.html', context)
+
+class DigipetUpdate(UpdateView):
+  model = Digipet
+  fields = ['name', 'personality']
