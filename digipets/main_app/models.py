@@ -55,3 +55,4 @@ class Digipet(models.Model):
 
   def feed(self):
 	  self.last_feed = datetime.now()
+		return
