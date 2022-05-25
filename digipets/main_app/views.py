@@ -37,6 +37,10 @@ def signup(request):
   form = UserCreationForm()
   context = {'form': form, 'error_message': error_message}
   return render(request, 'registration/signup.html', context)
+
+def digipets_feed (request, digipet_id):
+  Digipet.objects.get(id=digipet_id).feed
+  return redirect(request, 'digipets_detail', digipet_id = digipet_id)
   
 class DigipetCreate(CreateView):
   model = Digipet
