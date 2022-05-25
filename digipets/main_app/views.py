@@ -16,6 +16,9 @@ def home(request):
 def landing(request):
   return render(request, 'landing.html')
 
+def digipets_update(request, digipet_id):
+  return render(request, 'digipets/update.html')
+
 def digipets_detail(request, digipet_id):
   digipet = Digipet.objects.get(id=digipet_id)
   return render(request, 'digipets/detail.html', {'digipet': digipet})

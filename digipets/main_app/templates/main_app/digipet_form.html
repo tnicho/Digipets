@@ -24,7 +24,11 @@
     <div class="relative px-6 pt-10 pb-8 bg-orange-100 shadow-xl sm:max-w-lg sm:mx-auto rounded-xl sm:px-10">
       <div class="max-w-md mx-auto">
         <div class="divide-y divide-gray-400/50">
-
+          {% if object %}
+          <div>
+            
+          </div>
+          {% else %}
           <!-- Put the carousel here  -->
           <div class="max-w-2xl mx-auto">
 
@@ -35,6 +39,7 @@
                       <div class="hidden duration-700 ease-in-out" data-carousel-item>
                           <span class="absolute top-1/2 left-1/2 text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 sm:text-3xl dark:text-gray-800">First Slide</span>
                           <img src="{% static "digipets\assets\animals\corgi\1.svg" %}" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-52 scale-50" alt="...">
+                          <img id ='corgi-slide' src="" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-52 scale-50" alt="...">
                       </div>
                       <!-- Item 2 -->
                       <div class="hidden duration-700 ease-in-out" data-carousel-item>
@@ -73,12 +78,52 @@
             </p>
               <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
           </div>
+          {% endif %}
+          {% if object %}
 
+          <div class="py-8 text-base  justify-between">
+            <form action="" method="post">
+              {% csrf_token %}
+            <td>
+              <p class="nunito text-xl"> What Is Your Pets New Name? </p>
+              <input 
+              type="text" 
+              name="name" 
+              maxlength="50" 
+              required="" 
+              id="id_name" 
+              placeholder="Pets Name" 
+              class="py-2 px-3 border border-gray-300 focus:border-red-300 focus:outline-none focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-lg shadow-sm disabled:bg-gray-100 my-2 block w-full">
+            </td>
 
+            <br>
+
+            <td>
+              <p class="nunito text-xl"> Choose Your Pets New Personality: </p>
+              <select 
+              name="personality" 
+              id="id_personality"
+              class=" py-2 px-3 border border-gray-300 focus:border-red-300 focus:outline-none focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-lg shadow-sm disabled:bg-gray-100 my-2 ">
+                <option value="T" selected="">Timid</option>
+                <option value="B">Brave</option>
+                <option value="N">Naughty</option>
+                <option value="C">Calm</option>
+                <option value="J">Jolly</option>
+                <option value="Q">Quirky</option>
+                <option value="S">Sassy</option>
+              </select>  
+            </td>
+            <input 
+            type="submit" 
+            value="Update Pet" 
+            class="nunito w-full inline-flex items-center justify-center mt-8 mb-4 px-4 py-2 bg-red-600 border border-transparent rounded-lg  capitalize text-white hover:bg-red-700 active:bg-red-700 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 disabled:opacity-25 transition text-xl" >
+
+        </form>
+          {% else %}
           <!-- <img src="https://www.harley-davidson.com/content/dam/h-d/images/product-images/bikes/motorcycle/2022/2022-softail-standard/2022-softail-standard-motorcycle-nav.jpg?impolicy=myresize&rw=500" /> -->
           <div class="py-8 text-base  justify-between">
             <form action="" method="post">
-
+              {% csrf_token %}
             <td>
               <p class="nunito text-xl"> What Is Your Pets Name? </p>
               <input 
@@ -140,7 +185,7 @@
 
               <p class="text-xl nunito my-1" >Choose your Color:<br></p>
               <div class="relative cursor-pointer gap-4 flex justify-center">
-                  <div class="w-8 h-8 bg-[#f6cda8] transition-all rounded-full block ring-[#f6cda8] hover:ring-2 ring-offset-1 py-2" ></div>
+                  <div id='button-f6cda8' class="w-8 h-8 bg-[#f6cda8] transition-all rounded-full block ring-[#f6cda8] hover:ring-2 ring-offset-1 py-2" ></div>
                   <div class="w-8 h-8 bg-[#d89d94] transition-all rounded-full block ring-[#d89d94] hover:ring-2 ring-offset-1 py-2" ></div>
                   <div class="w-8 h-8 bg-[#dd6b6c] transition-all rounded-full block ring-[#dd6b6c] hover:ring-2 ring-offset-1 py-2" ></div>
                   <div class="w-8 h-8 bg-[#875d71] transition-all rounded-full block ring-[#875d71] hover:ring-2 ring-offset-1 py-2" ></div>
@@ -153,6 +198,7 @@
                 class="nunito w-full inline-flex items-center justify-center mt-8 mb-4 px-4 py-2 bg-red-600 border border-transparent rounded-lg  capitalize text-white hover:bg-red-700 active:bg-red-700 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 disabled:opacity-25 transition text-xl" >
 
             </form>
+            {% endif %}
           </div>
          <div class="divide-y divide-gray-400/50"></div>
       </div>

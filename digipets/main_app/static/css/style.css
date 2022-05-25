@@ -15,6 +15,10 @@ body {
     font-family: 'Nunito', sans-serif;
 }
 
+#corgi-slide{
+    background-image: url('digipets\assets\animals\corgi\1.svg')
+}
+
 .container {
     background: yellow;
     width: 100%;
