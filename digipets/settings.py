@@ -51,7 +51,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'digipets.urls'
+ROOT_URLCONF = 'digipetsforever.urls'
 
 TEMPLATES = [
     {
