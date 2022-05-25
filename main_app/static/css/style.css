@@ -1,0 +1,23 @@
+
+body {
+    background-color: #FFECD4;
+}
+
+#landing-div{
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+#landing-bg{
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+#landing-logo{
+    position: absolute;
+    top: 40vh;
+    justify-content: center;
+    border: 1px green solid; 
+}
