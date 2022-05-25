@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1 class="nunito text-xl">Petting Zoo</h1>
+
+  <!-- Put the picture of digipet here -->
+
+  <h4 class="nunito text-2xl">Are you sure you want to send <span class="teal-text">{{ object.name }}</span> to the petting zoo?</h4>
+  <h6 class="nunito">*This cannot be undone</h6>
+
+  <p class="nunito text-2xl">Say Goodbye to {{ object.name }}</p>
+
+  <form action="" method="POST">
+    {% csrf_token %}
+    <input 
+      type="submit" 
+      value="Goodbye {{ object.name }}" 
+      class="nunito w-full inline-flex items-center justify-center mt-8 mb-4 px-4 py-2 bg-red-600 border border-transparent rounded-lg  capitalize text-white hover:bg-red-700 active:bg-red-700 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 disabled:opacity-25 transition text-xl">
+    <a href="{% url 'detail' digipet.id %}">Cancel</a>
+  </form>
+{% endblock %}
