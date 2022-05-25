@@ -6,7 +6,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import DigipetsForm
 from django.forms import ModelForm
-from django.views.generic.edit import UpdateView
+from django.views.generic.edit import UpdateView, DeleteView
 # Create your views here.
 
 
@@ -58,3 +58,7 @@ class DigipetCreate(CreateView):
 class DigipetUpdate(UpdateView):
   model = Digipet
   fields = ['name', 'personality']
+
+class DigipetDelete(DeleteView):
+  model = Digipet
+  success_url = '/digipets/'

@@ -11,4 +11,5 @@ urlpatterns = [
   path('accounts/', include('django.contrib.auth.urls')),
   path('accounts/signup/', views.signup, name='signup'),
   path('digipets/create/', views.DigipetCreate.as_view(), name='digipets_create'),
+  path('digipets/<int:pk>/delete/', views.DigipetDelete.as_view(), name='digipets_delete'),
 ]
