@@ -17,8 +17,11 @@
     <input 
       type="submit" 
       value="Goodbye {{ object.name }}" 
-      class="nunito w-full inline-flex items-center justify-center mt-8 mb-4 px-4 py-2 bg-red-600 border border-transparent rounded-lg  capitalize text-white hover:bg-red-700 active:bg-red-700 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 disabled:opacity-25 transition text-xl">
-    <a href="{% url 'detail' digipet.id %}">Cancel</a>
+      class="nunito w-full inline-flex items-center justify-center mt-2 mb-2 px-4 py-2 bg-red-600 border border-transparent rounded-lg  capitalize text-white hover:bg-red-700 active:bg-red-700 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 disabled:opacity-25 transition text-xl">
+    <a href="{% url 'detail' digipet.id %} "
+       class="nunito w-full inline-flex items-center justify-center mt-2 mb-2 px-4 py-2 bg-red-600 border border-transparent rounded-lg  capitalize text-white hover:bg-red-400 active:bg-red-700 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 disabled:opacity-25 transition text-xl">
+      <button> Cancel </button>
+    </a>
   </form>
 
   <script>

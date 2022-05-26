@@ -2,8 +2,7 @@
 {% block content %}
 {% load static %}
 
-<div id="pet-bars">
-	<!--insert pet bars here -->
+<!-- <div id="pet-bars">
 </div>
 
 <div id="pet-photo">
@@ -17,7 +16,6 @@
 </div>
 
 <div id="pet-buttons">
-	<!--insert pet buttons here -->
 	<button>feed</button>
 	<button>walk</button>
 	<button>play</button>
@@ -35,7 +33,91 @@
 <script>
 	let animalImage = "{{digipet.image}}";
 	document.getElementById('pet-photo').style.backgroundImage = "url('"+ animalImage +"')";
-</script>
+</script> -->
+
+
+
+
+<div class="flex h-screen w-screen items-center justify-center bg-orange-100 from-violet-900 to-teal-400">
+  <div class="p-8 w-11/12 cursor-pointer rounded-3xl bg-yellow-600 transition duration-300 ease-in-out hover:scale-105 hover:drop-shadow-2xl">
+    <div class="-mb-20 -translate-y-1/2 transform">
+			{% if digipet.species == "C" %}
+      	<img class="mx-auto h-64 " src="{% static "digipets\assets\animals\corgi\1.svg" %}">  
+    	{% elif digipet.species == "H" %}
+      	<img class="mx-auto h-64 " src="{% static "digipets\assets\animals\husky\1.svg" %}">
+    	{% elif digipet.species == "O" %}
+      	<img class="mx-auto h-64 " src="{% static "digipets\assets\animals\otter\1.svg" %}">
+    	{% endif %}
+      <!-- <img src="https://i.ibb.co/JWTX98g/Seek-Png-com-kobe-bryant-png-109287.png" alt="Kobe Bryant" title="Kobe Bryant" class="mx-auto h-64" /> -->
+    </div>
+    <div class="text-center">
+      <h3 class="text-center text-4xl nunito ">{{ digipet.name }}</h3>
+      <span class="text-sm nunito">Put Level Here</span>
+    </div>
+    <ul class="mt-16 mb-20 flex justify-center text-center text-2xl">
+      <li class="flex flex-col">
+				
+
+				<div class=" flex justify-center items-center">
+  <div class="grid grid-flow-row gap-10 w-full">
+    <div class="flex items-center justify-around">
+      <div class="">
+        <p></p>
+        <button
+                class="p-0 w-16 h-16 bg-amber-100 rounded-full hover:bg-red-700 active:shadow-lg mouse shadow transition ease-in duration-200 focus:outline-none">
+								<div class="text-white"> + </div>     
+        </button>
+    </div>
+  </div>
+</div>
+			
+			
+			</li>
+      
+			<li class="mx-6 flex flex-col">
+				
+				<div class=" flex justify-center items-center">
+					<div class="grid grid-flow-row gap-10 w-full">
+						<div class="flex items-center justify-around">
+							<div class="">
+								<p></p>
+								<button
+												class="p-0 w-16 h-16 bg-amber-100 rounded-full hover:bg-red-700 active:shadow-lg mouse shadow transition ease-in duration-200 focus:outline-none">
+												<div class="text-white"> - </div>     
+								</button>
+						</div>
+					</div>
+				</div>
+			
+			</li>
+      
+			<li class="flex flex-col">
+				
+				<div class=" flex justify-center items-center">
+					<div class="grid grid-flow-row gap-10 w-full">
+						<div class="flex items-center justify-around">
+							<div class="">
+								<p></p>
+								<button
+												class="p-0 w-16 h-16 bg-amber-100 rounded-full hover:bg-red-700 active:shadow-lg mouse shadow transition ease-in duration-200 focus:outline-none">
+												<div class="text-white"> * </div>     
+								</button>
+						</div>
+					</div>
+				</div>
+			
+			</li>
+    </ul>
+    <div class="text-center">
+      <a href="{% url 'digipets_update' digipet.id %}"><button class="rounded-xl bg-amber-100 px-24 py-2 text-black my-2">Edit {{ digipet.name }}</button></a>
+    </div>
+
+		<div class="text-center">
+      <a href="{% url 'digipets_delete' digipet.id %}"><button class="rounded-xl bg-red-600 px-24 py-2 text-black my-2 ">Send Away</button></a>
+    </div>
+
+  </div>
+</div>
 
 
 {% endblock %}
