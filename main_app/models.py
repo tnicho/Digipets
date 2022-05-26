@@ -39,6 +39,7 @@ class Digipet(models.Model):
   #image = models.ImageField( default = "/static/digipets/assets/animals/corgi/1.svg")
   image = models.CharField(max_length=250, default = "/static/digipets/assets/animals/corgi/1.svg")
   birthday = models.DateField('Birthday')
+  # hungry = models.BooleanField()
   #last_feed = models.DateField(default = datetime.now())
 
   #last_wash = models.DateField(default = datetime.now())

@@ -30,6 +30,8 @@ def digipets_detail(request, digipet_id):
 def digipets_index(request):
   digipets = Digipet.objects.filter(user=request.user)
   return render(request, 'digipets/index.html', {'digipets': digipets})
+  
+
 
 def signup(request):
   error_message=''
