@@ -3,7 +3,7 @@ from django.db import models
 from django.urls import reverse
 from django.contrib.auth.models import User
 from django import forms
-import datetime
+from datetime import datetime
 
 
 # Create your models here.
@@ -14,6 +14,7 @@ MOODS = (
     ('B', 'Bored'),
     ('R', 'Restless')
 )
+
 SPECIES = (
     ('H', 'Huskey'),
     ('C', 'Corgi'),
@@ -35,9 +36,10 @@ class Digipet(models.Model):
   species = models.CharField(max_length=10, choices=SPECIES, default=SPECIES[0][0])
   # personality=models.CharField(label='What personality does your pet have?', widget=models.Select(choices=PERSONALITIES))
   personality = models.CharField(max_length=20, choices=PERSONALITIES, default=PERSONALITIES[0][0])
-  # image = models.ImageField()
+  image = models.ImageField(default = "/static/digipets/assets/animals/otter/1.svg")
   birthday = models.DateField('Birthday')
-  # last_feed = models.DateField(default = datetime.now())
+  #last_feed = models.DateField(default = datetime.now())
+
   #last_wash = models.DateField(default = datetime.now())
   #last_play = models.DateField(default = datetime.now())
   #last_walk = models.DateField(default = datetime.now())
@@ -55,4 +57,4 @@ class Digipet(models.Model):
 
   # def feed(self):
 	#   self.last_feed = datetime.now()
-		
+
