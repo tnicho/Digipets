@@ -39,6 +39,7 @@ class Digipet(models.Model):
   image = models.ImageField(default = "/static/digipets/assets/animals/otter/1.svg")
   birthday = models.DateField('Birthday')
   #last_feed = models.DateField(default = datetime.now())
+
   #last_wash = models.DateField(default = datetime.now())
   #last_play = models.DateField(default = datetime.now())
   #last_walk = models.DateField(default = datetime.now())
@@ -56,3 +57,4 @@ class Digipet(models.Model):
 
   # def feed(self):
 	#   self.last_feed = datetime.now()
+
