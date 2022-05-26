@@ -25,8 +25,8 @@
       <div class="max-w-md mx-auto">
         <div class="divide-y divide-gray-400/50">
           {% if object %}
-          <div id="pet-photo">
-          </div>
+          <!-- <div id="pet-photo">
+          </div> -->
           {% else %}
           <!-- Put the carousel here  -->
           <div class="max-w-2xl mx-auto">
@@ -79,6 +79,16 @@
           </div>
           {% endif %}
           {% if object %}
+
+          <div class="-mb-20 -translate-y-1/2 transform">
+            {% if digipet.species == "C" %}
+              <img class="mx-auto h-64 " src="{% static "digipets\assets\animals\corgi\1.svg" %}">  
+            {% elif digipet.species == "H" %}
+              <img class="mx-auto h-64 " src="{% static "digipets\assets\animals\husky\1.svg" %}">
+            {% elif digipet.species == "O" %}
+              <img class="mx-auto h-64 " src="{% static "digipets\assets\animals\otter\1.svg" %}">
+            {% endif %}
+          </div>
 
           <div class="py-8 text-base  justify-between">
             <form action="" method="post">
@@ -223,7 +233,7 @@
     let leftButton = document.getElementById('left-button');
     let chooseSpeciesText = document.getElementById('choose-species-text');
 
-    document.getElementById('pet-photo').style.backgroundImage = "url('"+ animalImage +"')";
+    // document.getElementById('pet-photo').style.backgroundImage = "url('"+ animalImage +"')";
     
     function rightPetButton() {           
       if (species.value == 'C'){ 
