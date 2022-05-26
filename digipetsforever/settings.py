@@ -29,6 +29,7 @@ ALLOWED_HOSTS = [
     'digipetsforever.herokuapp.com'
 ]
 
+import django_heroku
 
 # Application definition
 
@@ -80,8 +81,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'digipets',
-        'USER': 'zain_',
-        'PASSWORD': '527614'
+        # 'USER': 'zain_',
+        # 'PASSWORD': '527614'
 
 
     }
@@ -132,3 +133,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = '/digipets/'
 
 LOGOUT_REDIRECT_URL = '/'
+
+django_heroku.settings(locals())
