@@ -3,10 +3,11 @@ from django.contrib.auth import login
 from django.views.generic.edit import CreateView
 from .models import Digipet
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import DigipetsForm
 from django.forms import ModelForm
-from django.views.generic.edit import UpdateView
+from django.views.generic.edit import UpdateView, DeleteView
 # Create your views here.
 
 
@@ -16,12 +17,18 @@ def home(request):
 def landing(request):
   return render(request, 'landing.html')
 
+@login_required
+def digipets_update(request, digipet_id):
+  return render(request, 'digipets/update.html')
+
+@login_required
 def digipets_detail(request, digipet_id):
   digipet = Digipet.objects.get(id=digipet_id)
   return render(request, 'digipets/detail.html', {'digipet': digipet})
 
+@login_required
 def digipets_index(request):
-  digipets = Digipet.objects.filter()
+  digipets = Digipet.objects.filter(user=request.user)
   return render(request, 'digipets/index.html', {'digipets': digipets})
 
 def signup(request):
@@ -37,20 +44,28 @@ def signup(request):
   form = UserCreationForm()
   context = {'form': form, 'error_message': error_message}
   return render(request, 'registration/signup.html', context)
+
+def digipets_feed (request, digipet_id):
+  Digipet.objects.get(id=digipet_id).feed
+  return redirect(request, 'digipets_detail', digipet_id = digipet_id)
   
-class DigipetCreate(CreateView):
+class DigipetCreate(LoginRequiredMixin, CreateView):
   model = Digipet
-  fields = ['name', 'species', 'personality', 'birthday']
+  #fields = ['name', 'species', 'personality', 'birthday', 'image']
+  fields = ['name', 'personality', 'birthday', 'species', 'image']
   # digipets_form = DigipetsForm()
-  # success_url = '/digipets/'
-
-
+  #success_url = '/digipets/'
 
   def form_valid(self, form):
     form.instance.user = self.request.user
     # taking the user and assigning them to the form instance
     return super().form_valid(form)
 
-class DigipetUpdate(UpdateView):
+
+class DigipetUpdate(LoginRequiredMixin, UpdateView):
   model = Digipet
   fields = ['name', 'personality']
+
+class DigipetDelete(LoginRequiredMixin, DeleteView):
+  model = Digipet
+  success_url = '/digipets/'

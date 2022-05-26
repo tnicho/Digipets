@@ -1,17 +1,265 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    {% if object %}
+{% load static %}
+    <!-- {% if object %}
         <h1>Edit <span class="teal-text">{{ object.name }}</span></h1>
+        
     {% else %}
         <h1>Add a Digipet!</h1>
     {% endif %}
   <form action="" method="post">
-    {% csrf_token %}
+    {% csrf_token %} -->
+    
     <!-- {{ digipets_form.as_p }} -->
-    <table>
+    
+    <!-- <table>
       {{ form.as_table }}
-    </table> -->
+    </table>
     <input type="submit" value="Submit!" class="btn">
-  </form>
+  </form> -->
+
+
+  <div class="min-h-screen bg-orange-100 py-6 flex flex-col justify-center relative overflow-hidden sm:py-12">
+    <div class="relative px-6 pt-10 pb-8 bg-orange-100 shadow-xl sm:max-w-lg sm:mx-auto rounded-xl sm:px-10">
+      <div class="max-w-md mx-auto">
+        <div class="divide-y divide-gray-400/50">
+          {% if object %}
+          <div id="pet-photo">
+          </div>
+          {% else %}
+          <!-- Put the carousel here  -->
+          <div class="max-w-2xl mx-auto">
+
+            <div id="default-carousel" class="relative" data-carousel="static">
+                  <!-- Carousel wrapper -->
+                  <div class="overflow-hidden relative h-56 rounded-lg sm:h-64 xl:h-80 2xl:h-96 bg-amber-100">
+                      <!-- Item 1 -->
+                      <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                          <span class="absolute top-1/2 left-1/2 text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 sm:text-3xl dark:text-gray-800">First Slide</span>
+                          <img src="{% static "digipets\assets\animals\corgi\1.svg" %}" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-52 scale-50" alt="...">
+                          <img id ='corgi-slide' src="" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-52 scale-50" alt="...">
+                      </div>
+                      <!-- Item 2 -->
+                      <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                          <img src="{% static "digipets\assets\animals\husky\1.svg" %}" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-64 scale-50" alt="...">
+                      </div>
+                      <!-- Item 3 -->
+                      <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                          <img src="{% static "digipets\assets\animals\otter\1.svg" %}" class="block absolute top-1/2 left-1/2 w-full -translate-x-44  -translate-y-72 scale-50" alt="...">
+                      </div>
+                  </div>
+                  <!-- Slider indicators -->
+                  <div class="flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2">
+                      <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+                      <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+                      <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+                  </div>
+                  <!-- Slider controls -->
+                  <button type="button" id="left-button" onclick="leftPetButton()" class="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none" data-carousel-prev>
+                      <span class="border-2 border-yellow-500 inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                          <svg class="w-5 h-5 text-yellow-500 sm:w-6 sm:h-6 dark:text-gray-800 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                          <span class="hidden">Previous</span>
+                      </span>
+                  </button>
+                  <button type="button" id="right-button" onclick="rightPetButton()" class="flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none" data-carousel-next>
+                      <span class="border-2 border-yellow-500 inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                          <svg class="w-5 h-5 text-yellow-500 sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                          <span class="hidden">Next</span>
+                      </span>
+                  </button>
+              </div>
+          
+            <p class="mt-5 text-orange-100">
+              This carousel slider component is part of a larger
+              <!-- <a class="text-blue-600 hover:underline"
+                href="https://flowbite.com/docs/getting-started/introduction/" target="_blank">Flowbite Documentation</a>. -->
+            </p>
+              <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
+          </div>
+          {% endif %}
+          {% if object %}
+
+          <div class="py-8 text-base  justify-between">
+            <form action="" method="post">
+              {% csrf_token %}
+            <td>
+              <p class="nunito text-xl"> What Is Your Pets New Name? </p>
+              <input 
+              type="text" 
+              name="name" 
+              maxlength="50" 
+              required="" 
+              id="id_name" 
+              placeholder="Pets Name" 
+              class="py-2 px-3 border border-gray-300 focus:border-red-300 focus:outline-none focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-lg shadow-sm disabled:bg-gray-100 my-2 block w-full">
+            </td>
+
+            <br>
+
+            <td>
+              <p class="nunito text-xl"> Choose Your Pets New Personality: </p>
+              <select 
+              name="personality" 
+              id="id_personality"
+              class=" py-2 px-3 border border-gray-300 focus:border-red-300 focus:outline-none focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-lg shadow-sm disabled:bg-gray-100 my-2 ">
+                <option value="T" selected="">Timid</option>
+                <option value="B">Brave</option>
+                <option value="N">Naughty</option>
+                <option value="C">Calm</option>
+                <option value="J">Jolly</option>
+                <option value="Q">Quirky</option>
+                <option value="S">Sassy</option>
+              </select>  
+            </td>
+            <input 
+            type="submit" 
+            value="Update Pet" 
+            class="nunito w-full inline-flex items-center justify-center mt-8 mb-4 px-4 py-2 bg-red-600 border border-transparent rounded-lg  capitalize text-white hover:bg-red-700 active:bg-red-700 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 disabled:opacity-25 transition text-xl" >
+
+        </form>
+
+        <script>
+          let animalImage = "{{digipet.image}}";
+          document.getElementById('pet-photo').style.backgroundImage = "url('"+ animalImage +"')";
+        </script>
+          {% else %}
+          <!-- <img src="https://www.harley-davidson.com/content/dam/h-d/images/product-images/bikes/motorcycle/2022/2022-softail-standard/2022-softail-standard-motorcycle-nav.jpg?impolicy=myresize&rw=500" /> -->
+          <div class="py-8 text-base  justify-between">
+            <form action="" method="post">
+              {% csrf_token %}
+
+              <td>
+                <h1 id="choose-species-text">Corgi</h1>
+              </td>
+
+              <!-- <td>
+                <p class="nunito text-xl"> Select Your Species </p>
+                <select 
+                name="species" 
+                id="id_species" 
+                class=" py-2 px-3 border border-gray-300 focus:border-red-300 focus:outline-none focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-lg shadow-sm disabled:bg-gray-100 my-2 ">
+                  <option value="H" selected="">Huskey</option>
+                  <option value="C">Corgi</option>
+                  <option value="O">Otter</option>
+                </select> 
+              </td> -->
+
+            <td>
+              <p class="nunito text-xl"> What Is Your Pets Name? </p>
+              <input 
+              type="text" 
+              name="name" 
+              maxlength="50" 
+              required="" 
+              id="id_name" 
+              placeholder="Pets Name" 
+              class="py-2 px-3 border border-gray-300 focus:border-red-300 focus:outline-none focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-lg shadow-sm disabled:bg-gray-100 my-2 block w-full">
+            </td>
+
+            <br>
+
+            <td>
+              <p class="nunito text-xl"> Choose Your Pets Personality: </p>
+              <select 
+              name="personality" 
+              id="id_personality"
+              class=" py-2 px-3 border border-gray-300 focus:border-red-300 focus:outline-none focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-lg shadow-sm disabled:bg-gray-100 my-2 ">
+                <option value="T" selected="">Timid</option>
+                <option value="B">Brave</option>
+                <option value="N">Naughty</option>
+                <option value="C">Calm</option>
+                <option value="J">Jolly</option>
+                <option value="Q">Quirky</option>
+                <option value="S">Sassy</option>
+              </select>  
+            </td>
+
+            <br>
+
+            <td>
+              <p class="nunito text-xl"> What Is Your Pets Birthday? </p>
+              <input 
+              type="text" 
+              name="birthday" 
+              required="" 
+              id="id_birthday" 
+              placeholder="mm/dd/yy"
+              class="py-2 px-3 border border-gray-300 focus:border-red-300 focus:outline-none focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-lg shadow-sm disabled:bg-gray-100 my-2 block w-full">
+            </td>
+
+              <p class="text-xl nunito my-1" >Choose your Color:<br></p>
+              <div class="relative cursor-pointer gap-4 flex justify-center">
+                  <div id='button-f6cda8' class="w-8 h-8 bg-[#f6cda8] transition-all rounded-full block ring-[#f6cda8] hover:ring-2 ring-offset-1 py-2" ></div>
+                  <div class="w-8 h-8 bg-[#d89d94] transition-all rounded-full block ring-[#d89d94] hover:ring-2 ring-offset-1 py-2" ></div>
+                  <div class="w-8 h-8 bg-[#dd6b6c] transition-all rounded-full block ring-[#dd6b6c] hover:ring-2 ring-offset-1 py-2" ></div>
+                  <div class="w-8 h-8 bg-[#875d71] transition-all rounded-full block ring-[#875d71] hover:ring-2 ring-offset-1 py-2" ></div>
+                  <div class="w-8 h-8 bg-[#5b5b5b] transition-all rounded-full block ring-[#5b5b5b] hover:ring-2 ring-2 ring-offset-1 py-2" ></div>
+              </div>
+              <input 
+                type="hidden" 
+                name="species" 
+                id="id_species" 
+                value="C">
+
+              <input
+                type="hidden"
+                id="id_image"
+                name="image"
+                value="/static/digipets/assets/animals/otter/1.svg">
+
+              <input 
+                type="submit" 
+                value="Create Pet" 
+                class="nunito w-full inline-flex items-center justify-center mt-8 mb-4 px-4 py-2 bg-red-600 border border-transparent rounded-lg  capitalize text-white hover:bg-red-700 active:bg-red-700 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 disabled:opacity-25 transition text-xl" >
+
+            </form>
+            {% endif %}
+          </div>
+         <div class="divide-y divide-gray-400/50"></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    let species = document.getElementById('id_species');
+    let imageLink = document.getElementById('id_image');
+    let rightButton = document.getElementById('right-button');
+    let leftButton = document.getElementById('left-button');
+    let chooseSpeciesText = document.getElementById('choose-species-text');
+
+    
+    
+    function rightPetButton() {           
+      if (species.value == 'C'){ 
+        chooseSpeciesText.innerHTML ='Husky'           
+        species.value = 'H'
+        imageLink.value = "/static/digipets/assets/animals/husky/1.svg"     
+      } else if (species.value == 'H'){   
+        chooseSpeciesText.innerHTML ='Otter'        
+        species.value = 'O'  
+        imageLink.value = "/static/digipets/assets/animals/otter/1.svg"       
+      } else {
+        chooseSpeciesText.innerHTML ='Corgi'       
+        species.value = 'C'
+        imageLink.value = "/static/digipets/assets/animals/corgi/1.svg"          
+      }
+    }
+
+      function leftPetButton() {    
+        if (species.value == 'C'){ 
+        chooseSpeciesText.innerHTML ='Otter'           
+        species.value = 'O'
+        imageLink.value = "/static/digipets/assets/animals/otter/1.svg"     
+      } else if (species.value == 'O'){   
+        chooseSpeciesText.innerHTML ='Husky'        
+        species.value = 'H'  
+        imageLink.value = "/static/digipets/assets/animals/husky/1.svg"       
+      } else {
+        chooseSpeciesText.innerHTML ='Corgi'       
+        species.value = 'C'
+        imageLink.value = "/static/digipets/assets/animals/corgi/1.svg"          
+      }
+    }       
+
+  </script>
 {% endblock %}

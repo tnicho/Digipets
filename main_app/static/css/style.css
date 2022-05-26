@@ -3,6 +3,49 @@ body {
     background-color: #FFECD4;
 }
 
+.colormatch {
+    background-color: #FFECD4; 
+}
+
+.main {
+    height: 100vh;
+}
+
+.nunito {
+    font-family: 'Nunito', sans-serif;
+}
+
+#corgi-slide{
+    background-image: url('digipets\assets\animals\corgi\1.svg')
+}
+
+.container {
+    background: yellow;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+ }
+ 
+ .centered-div {
+    width: 80%;
+    height: 190px;
+    margin: 10px;
+    margin-bottom: 100px;
+    padding: 5px;
+    color: white;
+ }
+
+.mid {
+    vertical-align: middle;
+}
+
+.small {
+    transform: scale(0.25);
+}
+
 #landing-div{
     position: relative;
     top: 0;
@@ -20,4 +63,35 @@ body {
     top: 40vh;
     justify-content: center;
     border: 1px green solid; 
+}
+
+#homebackground {
+    color: red;
+    background-image: url("/static/digipets/assets/backgrounds/bg-splash-screen-with-space.png");
+   
+}
+
+#logo {
+    background-image: url("/static/digipets/assets/brand/digipets-logo.png");
+    height: 100px;
+}
+
+#corgi {
+    background-image: url("/static/digipets/assets/animals/corgi/1.svg");
+    height: 100px;
+    width: 100px;
+}
+
+#pet-photo {
+    /*background-image: url("/static/digipets/assets/animals/corgi/1.svg");*/
+    background-repeat: no-repeat;
+    height: 300px;
+    width: 300px;
+}
+
+.index-photo {
+    /*background-image: url("/static/digipets/assets/animals/corgi/1.svg");*/
+    background-repeat: no-repeat;
+    height: 300px;
+    width: 300px;
 }
