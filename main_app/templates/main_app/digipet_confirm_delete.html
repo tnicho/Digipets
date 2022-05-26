@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1 class="nunito text-xl">Petting Zoo</h1>
+{% load static %}
+  <!-- <h1 class="nunito text-xl">Petting Zoo</h1>
 
   <div id="pet-photo">
 
@@ -27,6 +28,47 @@
   <script>
     let animalImage = "{{digipet.image}}";
     document.getElementById('pet-photo').style.backgroundImage = "url('"+ animalImage +"')";
-  </script>
+  </script> -->
+
+ 
+
+<form action="" method="POST">
+    {% csrf_token %}
+  <div class="flex h-screen w-screen items-center justify-center bg-orange-100 from-violet-900 to-teal-400">
+    <div class="p-8 w-11/12 cursor-pointer rounded-3xl bg-yellow-600 transition duration-300 ease-in-out hover:scale-105 hover:drop-shadow-2xl">
+      <div class="-mb-20 -translate-y-1/2 transform">
+        {% if digipet.species == "C" %}
+          <img class="mx-auto h-64 " src="{% static "digipets\assets\animals\corgi\1.svg" %}">  
+        {% elif digipet.species == "H" %}
+          <img class="mx-auto h-64 " src="{% static "digipets\assets\animals\husky\1.svg" %}">
+        {% elif digipet.species == "O" %}
+          <img class="mx-auto h-64 " src="{% static "digipets\assets\animals\otter\1.svg" %}">
+        {% endif %}
+        <!-- <img src="https://i.ibb.co/JWTX98g/Seek-Png-com-kobe-bryant-png-109287.png" alt="Kobe Bryant" title="Kobe Bryant" class="mx-auto h-64" /> -->
+      </div>
+      <div class="text-center">
+        <h3 class="text-center text-4xl nunito ">{{ digipet.name }}</h3>
+        <span class="text-sm nunito">Put Level Here</span>
+        <h5 class="text-center text-2xl nunito ">Are you sure you want to send <span class="teal-text">{{ object.name }}</span> to the petting zoo?</h5>
+        <h5 class="text-center text-2xl nunito text-red-600 ">*THIS CANNOT BE UNDONE</h5>
+      </div>
+
+      <div class="text-center">
+        <input 
+          type="submit" 
+          value="Goodbye {{ object.name }}" 
+          class="nunito w-full inline-flex items-center justify-center mt-2 mb-2 px-4 py-2 bg-red-600 border border-transparent rounded-lg  capitalize text-white hover:bg-red-700 active:bg-red-700 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 disabled:opacity-25 transition text-xl">
+      </div>
+  
+      <div class="text-center">
+        <a href="{% url 'detail' digipet.id %} "
+          class="nunito w-full inline-flex items-center justify-center mt-2 mb-2 px-4 py-2 bg-red-600 border border-transparent rounded-lg  capitalize text-white hover:bg-red-400 active:bg-red-700 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 disabled:opacity-25 transition text-xl">
+          <button> Cancel </button>
+        </a>
+      </div>
+  
+    </div>
+  </div>
+</form>
 
 {% endblock %}
