@@ -37,7 +37,7 @@ class Digipet(models.Model):
   personality = models.CharField(max_length=20, choices=PERSONALITIES, default=PERSONALITIES[0][0])
   # image = models.ImageField()
   birthday = models.DateField('Birthday')
-  last_feed = models.DateField(default = datetime.now())
+  # last_feed = models.DateField(default = datetime.now())
   #last_wash = models.DateField(default = datetime.now())
   #last_play = models.DateField(default = datetime.now())
   #last_walk = models.DateField(default = datetime.now())
@@ -53,6 +53,6 @@ class Digipet(models.Model):
   def get_absolute_url(self):
     return reverse('detail', kwargs={'digipet_id': self.id})
 
-  def feed(self):
-	  self.last_feed = datetime.now()
-		return
+  # def feed(self):
+	#   self.last_feed = datetime.now()
+		
