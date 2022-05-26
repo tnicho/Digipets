@@ -65,7 +65,7 @@
         <p></p>
         <button
                 class="p-0 w-16 h-16 bg-amber-100 rounded-full hover:bg-red-700 active:shadow-lg mouse shadow transition ease-in duration-200 focus:outline-none">
-								<div class="text-white"> + </div>     
+								<div class="text-white nunito"> + </div>     
         </button>
     </div>
   </div>
@@ -83,7 +83,7 @@
 								<p></p>
 								<button
 												class="p-0 w-16 h-16 bg-amber-100 rounded-full hover:bg-red-700 active:shadow-lg mouse shadow transition ease-in duration-200 focus:outline-none">
-												<div class="text-white"> - </div>     
+												<div class="text-white nunito"> - </div>     
 								</button>
 						</div>
 					</div>
@@ -100,7 +100,7 @@
 								<p></p>
 								<button
 												class="p-0 w-16 h-16 bg-amber-100 rounded-full hover:bg-red-700 active:shadow-lg mouse shadow transition ease-in duration-200 focus:outline-none">
-												<div class="text-white"> * </div>     
+												<div class="text-white nunito"> * </div>     
 								</button>
 						</div>
 					</div>
@@ -109,11 +109,11 @@
 			</li>
     </ul>
     <div class="text-center">
-      <a href="{% url 'digipets_update' digipet.id %}"><button class="rounded-xl bg-amber-100 px-24 py-2 text-black my-2">Edit {{ digipet.name }}</button></a>
+      <a href="{% url 'digipets_update' digipet.id %}"><button class="rounded-xl bg-amber-100 px-24 py-2 text-black my-2 nunito">Edit {{ digipet.name }}</button></a>
     </div>
 
 		<div class="text-center">
-      <a href="{% url 'digipets_delete' digipet.id %}"><button class="rounded-xl bg-red-600 px-24 py-2 text-black my-2 ">Send Away</button></a>
+      <a href="{% url 'digipets_delete' digipet.id %}"><button class="rounded-xl bg-red-600 px-24 py-2 text-black my-2 nunito">Send Away</button></a>
     </div>
 
   </div>
