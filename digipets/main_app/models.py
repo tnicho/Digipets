@@ -40,6 +40,7 @@ class Digipet(models.Model):
   image = models.CharField(max_length=250, default = "/static/digipets/assets/animals/corgi/1.svg")
   birthday = models.DateField('Birthday')
   #last_feed = models.DateField(default = datetime.now())
+
   #last_wash = models.DateField(default = datetime.now())
   #last_play = models.DateField(default = datetime.now())
   #last_walk = models.DateField(default = datetime.now())
@@ -60,3 +61,4 @@ class Digipet(models.Model):
 
   def get_time(self):
 	  return datetime.datetime.now()
+
