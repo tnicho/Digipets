@@ -88,3 +88,10 @@ body {
     height: 300px;
     width: 300px;
 }
+
+.index-photo {
+    /*background-image: url("/static/digipets/assets/animals/corgi/1.svg");*/
+    background-repeat: no-repeat;
+    height: 300px;
+    width: 300px;
+}
