@@ -25,9 +25,12 @@
       <div class="max-w-md mx-auto">
         <div class="divide-y divide-gray-400/50">
           {% if object %}
-          <div>
-            
+          <div id="pet-photo">
           </div>
+          <script>
+            let animalImage = "{{digipet.image}}";
+            document.getElementById('pet-photo').style.backgroundImage = "url('"+ animalImage +"')";
+          </script>
           {% else %}
           <!-- Put the carousel here  -->
           <div class="max-w-2xl mx-auto">
