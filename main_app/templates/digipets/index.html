@@ -5,22 +5,6 @@
 <div class="h-screen bg-orange-100">
 {% for digipet in digipets %}
 <a href ="{% url 'detail' digipet.id %}">
-
-  <!-- <div class="card-content">
-      <div class="index-photo">{{digipet.image}}</div> -->
-
-  <!-- <div class="card-content">
-      <div class="index-photo"></div>
-      <div class="index-info">
-      <p>Name: {{ digipet.name }}</p>
-      <p>Species: {{ digipet.species }}</p>
-      <p>Personality: {{ digipet.personality }}</p>
-      <p>Birthday: {{ digipet.birthday }}</p>
-    </div>
-    <div class="card-action">
-    </div>
-  </div> -->
-  
   <div class="w-screen bg-orange-100 flex flex-row flex-wrap p-3">
     <div class="mx-auto w-11/12">
       <!-- Profile Card -->
@@ -51,13 +35,6 @@
 </div>
 </div>
 </a>
-
-<script>
-  let animalImage = "{{digipet.image}}";
-  document.getElementsByClassName('index-photo').style.backgroundImage = "url('"+ animalImage +"')";
-</script>
-
 {% endfor %}
 </div>
-
 {% endblock %}

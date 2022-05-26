@@ -1,37 +1,15 @@
 {% extends 'base.html' %}
-
 {% block content %}
 {% load static %}
-    <!-- {% if object %}
-        <h1>Edit <span class="teal-text">{{ object.name }}</span></h1>
-        
-    {% else %}
-        <h1>Add a Digipet!</h1>
-    {% endif %}
-  <form action="" method="post">
-    {% csrf_token %} -->
-    
-    <!-- {{ digipets_form.as_p }} -->
-    
-    <!-- <table>
-      {{ form.as_table }}
-    </table>
-    <input type="submit" value="Submit!" class="btn">
-  </form> -->
-
-
 
   <div class="min-h-screen bg-orange-100 py-6 flex flex-col justify-center relative overflow-hidden sm:py-12">
     <div class="relative px-6 pt-10 pb-8 bg-orange-100 shadow-xl sm:max-w-lg sm:mx-auto rounded-xl sm:px-10">
       <div class="max-w-md mx-auto">
         <div class="divide-y divide-gray-400/50">
           {% if object %}
-          <!-- <div id="pet-photo">
-          </div> -->
           {% else %}
           <!-- Put the carousel here  -->
           <div class="max-w-2xl mx-auto">
-
             <div id="default-carousel" class="relative" data-carousel="static">
                   <!-- Carousel wrapper -->
                   <div class="overflow-hidden relative h-56 rounded-lg sm:h-64 xl:h-80 2xl:h-96 bg-amber-100">
@@ -70,11 +48,9 @@
                       </span>
                   </button>
               </div>
-
               <td>
                 <h1 id="choose-species-text" class="nunito text-center text-4xl">Corgi</h1>
               </td>
-          
             <p class="mt-5 text-orange-100">
               This carousel slider component is part of a larger
               <!-- <a class="text-blue-600 hover:underline"
@@ -84,7 +60,6 @@
           </div>
           {% endif %}
           {% if object %}
-
           <div class="-mb-20 -translate-y-1/2 transform">
             {% if digipet.species == "C" %}
               <img class="mx-auto h-64 " src="{% static "digipets\assets\animals\corgi\1.svg" %}">  
@@ -94,7 +69,6 @@
               <img class="mx-auto h-64 " src="{% static "digipets\assets\animals\otter\1.svg" %}">
             {% endif %}
           </div>
-
           <div class="py-8 text-base  justify-between">
             <form action="" method="post">
               {% csrf_token %}
@@ -109,9 +83,7 @@
               placeholder="Pets Name" 
               class="py-2 px-3 border border-gray-300 focus:border-red-300 focus:outline-none focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-lg shadow-sm disabled:bg-gray-100 my-2 block w-full">
             </td>
-
             <br>
-
             <td>
               <p class="nunito text-xl"> Choose Your Pets New Personality: </p>
               <select 
@@ -131,27 +103,11 @@
             type="submit" 
             value="Update Pet" 
             class="nunito w-full inline-flex items-center justify-center mt-8 mb-4 px-4 py-2 bg-red-600 border border-transparent rounded-lg  capitalize text-white hover:bg-red-700 active:bg-red-700 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 disabled:opacity-25 transition text-xl" >
-
         </form>
           {% else %}
-          <!-- <img src="https://www.harley-davidson.com/content/dam/h-d/images/product-images/bikes/motorcycle/2022/2022-softail-standard/2022-softail-standard-motorcycle-nav.jpg?impolicy=myresize&rw=500" /> -->
           <div class="py-8 text-base  justify-between">
             <form action="" method="post">
               {% csrf_token %}
-
-
-              <!-- <td>
-                <p class="nunito text-xl"> Select Your Species </p>
-                <select 
-                name="species" 
-                id="id_species" 
-                class=" py-2 px-3 border border-gray-300 focus:border-red-300 focus:outline-none focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-lg shadow-sm disabled:bg-gray-100 my-2 ">
-                  <option value="H" selected="">Huskey</option>
-                  <option value="C">Corgi</option>
-                  <option value="O">Otter</option>
-                </select> 
-              </td> -->
-
             <td>
               <p class="nunito text-xl"> What Is Your Pets Name? </p>
               <input 
@@ -163,9 +119,7 @@
               placeholder="Pets Name" 
               class="py-2 px-3 border border-gray-300 focus:border-red-300 focus:outline-none focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-lg shadow-sm disabled:bg-gray-100 my-2 block w-full">
             </td>
-
             <br>
-
             <td>
               <p class="nunito text-xl"> Choose Your Pets Personality: </p>
               <select 
@@ -181,9 +135,7 @@
                 <option value="S">Sassy</option>
               </select>  
             </td>
-
             <br>
-
             <td>
               <p class="nunito text-xl"> What Is Your Pets Birthday? </p>
               <input 
@@ -194,7 +146,6 @@
               placeholder="mm/dd/yy"
               class="py-2 px-3 border border-gray-300 focus:border-red-300 focus:outline-none focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-lg shadow-sm disabled:bg-gray-100 my-2 block w-full">
             </td>
-
               <p class="text-xl nunito my-1" >Choose your Color:<br></p>
               <div class="relative cursor-pointer gap-4 flex justify-center">
                   <div id='button-f6cda8' class="w-8 h-8 bg-[#f6cda8] transition-all rounded-full block ring-[#f6cda8] hover:ring-2 ring-offset-1 py-2" ></div>
@@ -208,18 +159,15 @@
                 name="species" 
                 id="id_species" 
                 value="C">
-
               <input
                 type="hidden"
                 id="id_image"
                 name="image"
                 value="/static/digipets/assets/animals/otter/1.svg">
-
               <input 
                 type="submit" 
                 value="Create Pet" 
                 class="nunito w-full inline-flex items-center justify-center mt-8 mb-4 px-4 py-2 bg-red-600 border border-transparent rounded-lg  capitalize text-white hover:bg-red-700 active:bg-red-700 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 disabled:opacity-25 transition text-xl" >
-
             </form>
             {% endif %}
           </div>
@@ -228,15 +176,11 @@
     </div>
   </div>
   <script>
-    let animalImage = "{{digipet.image}}";
     let species = document.getElementById('id_species');
     let imageLink = document.getElementById('id_image');
     let rightButton = document.getElementById('right-button');
     let leftButton = document.getElementById('left-button');
     let chooseSpeciesText = document.getElementById('choose-species-text');
-
-    // document.getElementById('pet-photo').style.backgroundImage = "url('"+ animalImage +"')";
-    
     function rightPetButton() {           
       if (species.value == 'C'){ 
         chooseSpeciesText.innerHTML ='Husky'           

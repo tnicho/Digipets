@@ -2,38 +2,6 @@
 {% block content %}
 {% load static %}
 
-<!-- <div id="pet-bars">
-</div>
-
-<div id="pet-photo">
-</div>
-<div id="pet-info">
-	<p>PET DETAILS PAGE</p>
-	<p>{{ digipet.name }}</p>
-  <p>Species: {{ digipet.species }}</p>
-  <p>Personality: {{ digipet.personality }}</p>
-  <p>Birthday: {{ digipet.birthday }}</p>
-</div>
-
-<div id="pet-buttons">
-	<button>feed</button>
-	<button>walk</button>
-	<button>play</button>
-	<button>wash</button>
-	
-</div>
-
-<div>
-	<a>Home</a>
-	<a>Settings</a>
-	<a href="{% url 'digipets_update' digipet.id %}">Edit ME</a>
-	<a href="{% url 'digipets_delete' digipet.id %}">Delete ME</a>
-</div>
-
-<script>
-	let animalImage = "{{digipet.image}}";
-	document.getElementById('pet-photo').style.backgroundImage = "url('"+ animalImage +"')";
-</script> -->
 
 
 
@@ -48,7 +16,6 @@
     	{% elif digipet.species == "O" %}
       	<img class="mx-auto h-64 " src="{% static "digipets\assets\animals\otter\1.svg" %}">
     	{% endif %}
-      <!-- <img src="https://i.ibb.co/JWTX98g/Seek-Png-com-kobe-bryant-png-109287.png" alt="Kobe Bryant" title="Kobe Bryant" class="mx-auto h-64" /> -->
     </div>
     <div class="text-center">
       <h3 class="text-center text-4xl nunito ">{{ digipet.name }}</h3>
@@ -56,8 +23,6 @@
     </div>
     <ul class="mt-16 mb-20 flex justify-center text-center text-2xl">
       <li class="flex flex-col">
-				
-
 				<div class=" flex justify-center items-center">
   <div class="grid grid-flow-row gap-10 w-full">
     <div class="flex items-center justify-around">
@@ -70,12 +35,8 @@
     </div>
   </div>
 </div>
-			
-			
 			</li>
-      
 			<li class="mx-6 flex flex-col">
-				
 				<div class=" flex justify-center items-center">
 					<div class="grid grid-flow-row gap-10 w-full">
 						<div class="flex items-center justify-around">
@@ -88,11 +49,8 @@
 						</div>
 					</div>
 				</div>
-			
-			</li>
-      
+			</li> 
 			<li class="flex flex-col">
-				
 				<div class=" flex justify-center items-center">
 					<div class="grid grid-flow-row gap-10 w-full">
 						<div class="flex items-center justify-around">
@@ -105,17 +63,14 @@
 						</div>
 					</div>
 				</div>
-			
 			</li>
     </ul>
     <div class="text-center">
       <a href="{% url 'digipets_update' digipet.id %}"><button class="rounded-xl bg-amber-100 px-24 py-2 text-black my-2 nunito">Edit {{ digipet.name }}</button></a>
     </div>
-
 		<div class="text-center">
       <a href="{% url 'digipets_delete' digipet.id %}"><button class="rounded-xl bg-red-600 px-24 py-2 text-black my-2 nunito">Send Away</button></a>
     </div>
-
   </div>
 </div>
 
