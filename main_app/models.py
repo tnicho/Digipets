@@ -7,13 +7,13 @@ from datetime import datetime
 
 
 # Create your models here.
-MOODS = (
-    ('Ha', 'Happy'),
-    ('Hu', 'Hungry'),
-    ('S', 'Smelly'),
-    ('B', 'Bored'),
-    ('R', 'Restless')
-)
+# MOODS = (
+#     ('Ha', 'Happy'),
+#     ('Hu', 'Hungry'),
+#     ('S', 'Smelly'),
+#     ('B', 'Bored'),
+#     ('R', 'Restless')
+# )
 
 SPECIES = (
     ('H', 'Huskey'),
@@ -39,13 +39,13 @@ class Digipet(models.Model):
   #image = models.ImageField( default = "/static/digipets/assets/animals/corgi/1.svg")
   image = models.CharField(max_length=250, default = "/static/digipets/assets/animals/corgi/1.svg")
   birthday = models.DateField('Birthday')
-  # hungry = models.BooleanField()
+  mood = models.CharField(default='hungry')
   #last_feed = models.DateField(default = datetime.now())
 
   #last_wash = models.DateField(default = datetime.now())
   #last_play = models.DateField(default = datetime.now())
   #last_walk = models.DateField(default = datetime.now())
-  mood = models.CharField(max_length = 20, choices=MOODS, default=MOODS[0][0])
+  # mood = models.CharField(max_length = 20, choices=MOODS, default=MOODS[0][0])
 
   # joy, fatigue, sleep, level will be added later on. This so far should be enough
   # to get our CRUD going

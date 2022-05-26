@@ -15,7 +15,7 @@ Steps:
 
 2) Create Your pet
 
-3) Your pet's name and peronality can be edited
+3) Your pet's name and personality can be edited
 
 4) Your pet can be deleted (sent to the petting zoo)
 

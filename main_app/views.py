@@ -29,9 +29,12 @@ def digipets_detail(request, digipet_id):
 @login_required
 def digipets_index(request):
   digipets = Digipet.objects.filter(user=request.user)
+  if Digipet.hungry == "happy":
+    Digipet.hungry == "hungry"
+  else:
+    Digipet.hungry == "happy"
   return render(request, 'digipets/index.html', {'digipets': digipets})
   
-
 
 def signup(request):
   error_message=''
@@ -48,7 +51,7 @@ def signup(request):
   return render(request, 'registration/signup.html', context)
 
 def digipets_feed (request, digipet_id):
-  Digipet.objects.get(id=digipet_id).feed
+  Digipet.objects.get(id=digipet_id).mood == 'happy'
   return redirect(request, 'digipets_detail', digipet_id = digipet_id)
   
 class DigipetCreate(LoginRequiredMixin, CreateView):
