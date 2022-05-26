@@ -47,9 +47,10 @@ def digipets_feed (request, digipet_id):
   
 class DigipetCreate(CreateView):
   model = Digipet
-  fields = ['name', 'species', 'personality', 'birthday']
+  #fields = ['name', 'species', 'personality', 'birthday', 'image']
+  fields = ['name', 'personality', 'birthday', 'species', 'image']
   # digipets_form = DigipetsForm()
-  # success_url = '/digipets/'
+  #success_url = '/digipets/'
 
 
 

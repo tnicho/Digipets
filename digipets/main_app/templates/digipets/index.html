@@ -4,7 +4,7 @@
 {% for digipet in digipets %}
 <a href ="{% url 'detail' digipet.id %}">
   <div class="card-content">
-      <div class="index-photo"></div>
+      <div class="index-photo">{{digipet.image}}</div>
       <div class="index-info">
       <p>Pass: {{ digipet.name }}</p>
       <p>Species: {{ digipet.species }}</p>
@@ -15,6 +15,10 @@
     </div>
   </div>
 </a>
+<script>
+  let animalImage = "{{digipet.image}}";
+  document.getElementsByClassName('index-photo').style.backgroundImage = "url('"+ animalImage +"')";
+</script>
 {% endfor %}
 
 {% endblock %}

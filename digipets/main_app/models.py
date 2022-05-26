@@ -36,7 +36,8 @@ class Digipet(models.Model):
   species = models.CharField(max_length=10, choices=SPECIES, default=SPECIES[0][0])
   # personality=models.CharField(label='What personality does your pet have?', widget=models.Select(choices=PERSONALITIES))
   personality = models.CharField(max_length=20, choices=PERSONALITIES, default=PERSONALITIES[0][0])
-  image = models.ImageField(default = "/static/digipets/assets/animals/otter/1.svg")
+  #image = models.ImageField( default = "/static/digipets/assets/animals/corgi/1.svg")
+  image = models.CharField(max_length=250, default = "/static/digipets/assets/animals/corgi/1.svg")
   birthday = models.DateField('Birthday')
   #last_feed = models.DateField(default = datetime.now())
   #last_wash = models.DateField(default = datetime.now())
@@ -54,5 +55,8 @@ class Digipet(models.Model):
   def get_absolute_url(self):
     return reverse('detail', kwargs={'digipet_id': self.id})
 
-  # def feed(self):
-	#   self.last_feed = datetime.now()
+  def feed (self):
+    self.last_feed = self.get_time()
+
+  def get_time(self):
+	  return datetime.datetime.now()
