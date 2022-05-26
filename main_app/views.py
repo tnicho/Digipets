@@ -29,10 +29,10 @@ def digipets_detail(request, digipet_id):
 @login_required
 def digipets_index(request):
   digipets = Digipet.objects.filter(user=request.user)
-  if Digipet.hungry == "happy":
-    Digipet.hungry == "hungry"
-  else:
-    Digipet.hungry == "happy"
+  # if Digipet.hungry == "happy":
+  #   Digipet.hungry == "hungry"
+  # else:
+  #   Digipet.hungry == "happy"
   return render(request, 'digipets/index.html', {'digipets': digipets})
   
 
