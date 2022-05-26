@@ -21,7 +21,7 @@
     class=" bg-cover bg-center scale-125 justify-center mb-20"
     id="logo"
     > </div>
-    <form method="post" action="{% url 'login' %}">
+    <form method="post" action="{% url 'signup' %}">
       {% csrf_token %}
       <!-- {{ form.as_p }} -->
 
@@ -42,7 +42,7 @@
       <p>
         <input 
         type="password" 
-        name="password" 
+        name="password1" 
         autocomplete="current-password" 
         required="" 
         id="id_password" 
