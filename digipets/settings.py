@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'digipets.urls'
+ROOT_URLCONF = 'digipetsforever.urls'
 
 TEMPLATES = [
     {
@@ -68,7 +68,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'digipets.wsgi.application'
+WSGI_APPLICATION = 'digipetsforever.wsgi.application'
 
 
 # Database

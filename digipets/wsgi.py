@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'digipets.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'digipetsforever.settings')
 
 application = get_wsgi_application()
