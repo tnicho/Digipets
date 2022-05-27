@@ -25,10 +25,14 @@
   </div>
   <div class="md:w-2/3 w-5/6 px-3 flex flex-row flex-wrap">
     <div class="w-full text-right text-gray-700 font-semibold relative pt-3 md:pt-0">
-      <div class="text-2xl text-white leading-tight"> {{ digipet.name }} </div>
-      <div class="text-normal text-white hover:text-gray-400 cursor-pointer"><span class="border-b border-dashed border-white pb-1">Personality: {{digipet.get_personality_display}}</span></div>
-      <div class="text-normal text-white hover:text-gray-400 cursor-pointer"><span class="border-b border-dashed border-white pb-1">Birthday: {{digipet.birthday}}</span></div>
-      <div class="text-sm text-white hover:text-gray-400 cursor-pointer md:absolute pt-3 md:pt-0 bottom-0 right-0">Mood: <b> {{ digipet.mood }} </b></div>
+      <div class="text-2xl text-white leading-tight nunito"> {{ digipet.name }} </div>
+      <div class="text-normal text-white hover:text-gray-400 cursor-pointer"><span class="border-b border-dashed border-white pb-1 nunito">Personality: {{digipet.get_personality_display}}</span></div>
+      <div class="text-normal text-white hover:text-gray-400 cursor-pointer"><span class="border-b border-dashed border-white pb-1 nunito">Birthday: {{digipet.birthday}}</span></div>
+      {% if digipet.mood == "Ha" %}
+      <div class="text-sm text-white hover:text-gray-400 cursor-pointer md:absolute pt-3 md:pt-0 bottom-0 right-0 nunito">Mood: <b> Hungry </b></div>
+      {% else %}
+      <div class="text-sm text-white hover:text-gray-400 cursor-pointer md:absolute pt-3 md:pt-0 bottom-0 right-0 nunito">Mood: <b>  {{ digipet.mood }} </b></div>
+      {% endif %}
     </div>
   </div>
 </div>
