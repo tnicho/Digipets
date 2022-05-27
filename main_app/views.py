@@ -51,8 +51,11 @@ def signup(request):
   return render(request, 'registration/signup.html', context)
 
 def digipets_feed (request, digipet_id):
-  Digipet.objects.get(id=digipet_id).mood == 'happy'
-  return redirect(request, 'digipets_detail', digipet_id = digipet_id)
+  print("made it here")
+  digipet = Digipet.objects.get(id=digipet_id)
+  digipet.mood = 'happy'
+  digipet.save()
+  return redirect('detail', digipet_id = digipet_id)
   
 class DigipetCreate(LoginRequiredMixin, CreateView):
   model = Digipet
