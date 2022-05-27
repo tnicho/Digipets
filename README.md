@@ -7,11 +7,17 @@ Digipets was designed for use on mobile devices
 Screenshots:
 
 Landing Page: https://github.com/tnicho/Digipets/blob/main/Digipets%20Screenshots/Digipets%20Landing.png
+
 Login Page: https://github.com/tnicho/Digipets/blob/main/Digipets%20Screenshots/Digipets%20Login.png
+
 Index Page: https://github.com/tnicho/Digipets/blob/main/Digipets%20Screenshots/Digipets%20Index.png
+
 Show Page: https://github.com/tnicho/Digipets/blob/main/Digipets%20Screenshots/Digipets%20Show.png
+
 Create Page: https://github.com/tnicho/Digipets/blob/main/Digipets%20Screenshots/Digipets%20Create.png
+
 Update Page: https://github.com/tnicho/Digipets/blob/main/Digipets%20Screenshots/Digipets%20Update.png
+
 Delete Page: https://github.com/tnicho/Digipets/blob/main/Digipets%20Screenshots/Digipets%20Delete.png
 
 
