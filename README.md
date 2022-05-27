@@ -49,10 +49,15 @@ Link to Trello board used for set up: https://trello.com/b/T3EvZMJB/collabathon-
 Icebox Items:
 
 -Change pet colours
+
 -Include pet backgrounds
+
 -Add Walking, playing, and bathing features
+
 -Level up and unlockables
+
 -include mini games for activities
+
 -make avaiable on desktop and tablet
 
 
