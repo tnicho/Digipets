@@ -53,7 +53,7 @@ def signup(request):
 def digipets_feed (request, digipet_id):
   print("made it here")
   digipet = Digipet.objects.get(id=digipet_id)
-  digipet.mood = 'happy'
+  digipet.mood = 'Happy'
   digipet.save()
   return redirect('detail', digipet_id = digipet_id)
   
