@@ -1,5 +1,7 @@
 Digipets (aka Digipetsforever)
+
 Software Development: Curtis McEachen, Tim Nicholson, Zain Amir  
+
 UX Design: by Aljean Cardenas and Meenakshi Limbachiya
 
 Digipets was designed for use on mobile devices
